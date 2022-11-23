@@ -1,8 +1,6 @@
-// const beepTime = process.argv.slice(2);
-const timer = (args) => {
-  //initiating funciton with arg var
 
-  //continue if value is greater than 0 (nothing if not)
+const timer = (args) => {
+
   for (const arg of args) {
     const interval = Number(arg);
 
@@ -10,16 +8,13 @@ const timer = (args) => {
       continue;
     }
 
-    console.log(`setting timer for ${interval}`);
-
     setTimeout(() => {
-      process.stdout.write(`\x07 beep!`);
-      //beep sound + text to visually confirm
+      process.stdout.write(`\x07 ${interval} beep!`);
+
     }, interval * 1000);
-    //timer is 1000ms* arg input
 
   }
 
 };
 
-timer(process.argv.slice(2));  //timer to take in arguments
+timer(process.argv.slice(2));
